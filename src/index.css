@@ -1,0 +1,34 @@
+
+.hidden{
+  opacity: 0;
+  max-width: 0px;
+  max-height: 0px;
+  transition: all 1s;
+  filter: blur(2px);
+  transform: translateX(-15%);
+}
+.show{
+  max-width: 10000px;
+  max-height: 10000px;
+  opacity: 1;
+  filter:blur(0);
+  transform: translateX(0);
+}
+
+.invisble{
+  opacity: 0;
+  transition: all 2s ease-in-out;
+  filter: blur(2px);
+}
+
+.visble{
+  opacity:1;
+  filter:blur(0);
+  transition: all 0.5s ease-in-out;
+}
+@media(prefers-reduced-motion){
+  .hidden{
+    transition: none;
+  }
+}
+

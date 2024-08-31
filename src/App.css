@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+
+body{
+  margin:0;
+  min-height:100vh;
+}
+#scroll-container {
+  overflow: hidden; /* Required for LocomotiveScroll */
+  position: relative;
+}
+
+[data-scroll-container] {
+  overflow: hidden;
+}
+.balance{
+  & .Box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
+    padding:2em;
+    border-radius:50px;
+    backdrop-filter:blur(200px);
+    box-shadow:0.2em 0.2em 0.5em rgba(0, 0, 0, 0.1);
+    font-size:1.2em;
+  }
+}
+.hero{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:1.5rem;
+  font-size: 2.5rem;
+  width: 100%;
+  height:auto;
+  min-height: 100vh;
+
+  margin:auto;
+  padding:100px 20px;
+  background-size:200% auto;
+  background-image: linear-gradient(to right, white, #F5E6EE,#F5E6E1, #CCF5CB,#E1F5EE,white);
+  backdrop-filter: blur(20px);
+  animation: gradient 25s linear infinite;
+  & .Login{
+    border:2px solid black;
+    border-radius: 100px;
+    padding-left:30px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-right:30px;
+    font-size:1.5rem;
+    color:black;
+    transition:0.5s ease-in-out;
+  }
+  & .Login:hover{
+    font-size:1.6rem;
+    padding-left:35px;
+    padding-top:7px;
+    padding-bottom:7px;
+    padding-right:35px;
+    transition:0.5s ease-in-out;
+  }
+
+}
+
+
+
+
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+}
+}
+
+header{
+position: fixed;
+top:0px;
+left:50%;
+transform: translateX(-50%);
+width:100%;
+height:61px;
+box-sizing:border-box;
+padding-left: 109px;
+padding-right: 200px;
+z-index: 100;
+display:flex;
+align-items: center;
+justify-content: space-between;
+background-color: transparent;
+backdrop-filter: blur(20px);
+.logo{
+  display:flex;
+  flex-direction:row;
+  gap:10px;
+  & .copyright:hover {
+    transform: rotate(360deg);
+  }
+}
+& nav{
+  display:flex;
+  gap:30px;
+ 
+& span .active{
+  color:red;
+}
+& span:hover{
+  cursor: pointer;
+  border-bottom: 1px solid black;
+}
+}
+}
+
+
+.profileOptions{
+  width: 100%;
+  height:auto;
+  min-height: 100vh;
+  display:flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, white, #c2dfed,#adedff, #c2dfed,white );
+  animation:gradientRight 25s linear infinite;
+  backdrop-filter: blur(100px);
+  & nav{
+    display:flex;
+      gap:1.5rem;
+      padding:10px;
+      padding-left: 30px;
+      padding-right:30px;
+      flex-direction: row;
+    border-radius: 30px;
+    border: 1px solid black;;
+    align-items: center;
+    justify-content: center;
+    & span{
+      cursor:pointer;
+    }
+  }
+  nav:hover{
+    border: 1px solid blue;;
+  }
+  .pie-chart-container {
+    display:flex;
+    flex-direction: column;
+    width: 10em;
+    height: 10em;
+  }
+}
+@keyframes gradientRight {
+  from{
+    background-position: 200% 50%;
+  }
+  to{
+    background-position:0% 50%;
+  }
+}
+
+.TRANSACTIONS{
+  margin:0;
+  width: 100%;
+  height:auto;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image:linear-gradient(to left, white,#f1e2ce,#f1d3bf,#f1e2ce,white);
+  backdrop-filter:blur(100px);
+  background-size:200% auto;
+  /* animation: gradient 25s linear infinite; */
+  & .header{
+    margin-top:3rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    & .title{
+      font-size:3rem;
+  
+    }
+  }
+  
+}
+
+.addTransaction{
+  margin:0;
+  width: 100%;
+  height:auto;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap:2rem;
+  background-size:200% auto;
+  background-image:linear-gradient(to right,white, rgb(224, 229, 156),rgb(239, 243, 188),rgb(224, 229, 156),white);
+  backdrop-filter:blur(200px);
+  animation: gradient 25s linear infinite;
+  & .title{
+    font-size:3rem;
+  }
+  & .Box{
+    border:1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
+    padding:2rem;
+    border-radius:50px;
+    backdrop-filter:blur(200px);
+    box-shadow:0.2em 0.2em 0.5em rgba(0, 0, 0, 0.1);
+    font-size:1.2em;
+  }
+  & .text{
+    font-size:1.2rem;
+    border-left: 1px solid black;
+    padding-left:0.1rem;
+  }
+  & .animated-text {
+    position: relative; /* Necessary for absolute positioning of child elements */
+    & .border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-left: 2px solid black; /* Adjust border width and color as needed */
+      animation: border-grow 3s forwards; /* Adjust animation duration */
+    }
+    
+    & .text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      white-space: nowrap; /* Prevent text wrapping */
+      animation: text-slide 3s forwards; /* Adjust animation duration */
+    }
+  }
+  
+  
+}
+
+@keyframes border-grow {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes text-slide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.Register{
+  width: 100%;
+  height:auto;
+  min-height: 100vh;
+  margin:0px;
+  gap:10px;
+  background-color: #c1c4c0e1;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & .box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:2em;
+    gap:3px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0,0.1) ;
+    backdrop-filter: blur(20px);
+    background-color: rgba(128, 128, 128,0.1);
+    & .Googlelogin{
+      display:flex;
+      flex-direction: row;
+      gap:3px;
+    }
+  }
+
+  
+ & .login-image {
+    width: 500px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+.viz{
+  width:auto;
+  height:auto;
+  & .Box{
+    border:1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
+    padding:2em;
+    border-radius:50px;
+    backdrop-filter:blur(200px);
+    box-shadow:0.2em 0.2em 0.5em rgba(0, 0, 0, 0.1);
+    font-size:1.2em;
+  }
+}
