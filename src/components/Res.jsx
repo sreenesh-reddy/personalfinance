@@ -3,6 +3,8 @@ import { googleProvider, auth } from "./firebase/firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import wallpaper from "../assets/wallpap.jpeg"
+import logo from "../assets/google.png"
 
 export function Res() {
     const navigate = useNavigate()
@@ -22,7 +24,7 @@ export function Res() {
 
     return (
     <section className="Register">
-      <img src="assets/wallpap.jpeg" alt="Illustration" className="login-image" />
+      <img src={wallpaper} alt="Illustration" className="login-image" />
       
 
             LOG IN
@@ -39,7 +41,7 @@ export function Res() {
                     simply login with proper credentials</div> */}
      
                 <div className="Googlelogin">
-                <Image marginTop={"5px"} src="assets/google.png" h={"30px"} w={"30px"}/>
+                <Image marginTop={"5px"} src={logo} h={"30px"} w={"30px"}/>
                 <Button style={{backgroundColor:"transparent"}} onClick={signIn}>SIGN IN</Button>
                 </div>
               
