@@ -22,7 +22,7 @@ export function Res() {
 
     return (
     <section className="Register">
-      <img src="public/wallpap.jpeg" alt="Illustration" className="login-image" />
+      <img src="assets/wallpap.jpeg" alt="Illustration" className="login-image" />
       
 
             LOG IN
@@ -39,7 +39,7 @@ export function Res() {
                     simply login with proper credentials</div> */}
      
                 <div className="Googlelogin">
-                <Image marginTop={"5px"} src="public/google.png" h={"30px"} w={"30px"}/>
+                <Image marginTop={"5px"} src="assets/google.png" h={"30px"} w={"30px"}/>
                 <Button style={{backgroundColor:"transparent"}} onClick={signIn}>SIGN IN</Button>
                 </div>
               

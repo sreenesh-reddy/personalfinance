@@ -10,10 +10,10 @@ export default function AddComponent(){
     const [amount, setamount] = useState(0)
     const [type, setType] = useState(0)
     const [text,settext]= useState("")
-    const [showText,setshowText]=useState(false)
+    const [showText,setshowText]=useState(0)
     const {add}=useAdd(name,amount,type)
     const submit=(e)=>{
-        setshowText(true)
+        setshowText(1)
         if(name && amount &&type){
         add(name,amount,type)
         settext("New transaction has been added!")
@@ -22,7 +22,7 @@ export default function AddComponent(){
             settext("please fill all the details")
         }
         setTimeout(()=>{
-            setshowText(false)
+            setshowText(0)
         },3000)
 
 
@@ -47,9 +47,9 @@ export default function AddComponent(){
                 <Button onClick={submit}  _hover={{border:"1px solid blue"}} border={"1px solid rgba(0, 0, 0, 0.5)"} borderRadius={'100px'} backgroundColor={"transparent"}>SUBMIT</Button>
             </Stack>
         </div>
-       {showText?
-       <span class="text">{text}</span>
-       :null}
+       
+       <span class="text" style={{opacity:showText, transition:"opacity 0.5s ease-in-out"}} >{text}</span>
+       
 
     </section>
 
