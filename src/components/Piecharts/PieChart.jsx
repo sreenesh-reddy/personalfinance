@@ -11,10 +11,20 @@ import {
     Legend
   );
 
-import useFetch from '../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 
 export default function PieChart(){
     const {totalAmount} = useFetch();
+
+    const options = {
+      plugins: {
+          legend: {
+              display: true,  // Set to false to disable legends
+              position: 'right',  // You can set 'top', 'left', 'bottom', 'right'
+          },
+      },
+  };
+
     const data = {
         labels: ['Expense', 'Income'],
         datasets: [
@@ -22,12 +32,13 @@ export default function PieChart(){
             label: ['Amount'],
             data: [totalAmount.expense, totalAmount.income],
             backgroundColor: ['#FA3E39', '#92FA6E'],
+             borderColor: 'transparent',
             hoverBackgroundColor: ['#FA282E', '#62FA39'],
           },
         ],
       };
 
 return(<div className="pie-chart-container">
-<Pie data={data}/>
+<Pie data={data} options={options}/>
 </div>)
 }   

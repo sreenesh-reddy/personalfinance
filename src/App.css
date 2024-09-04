@@ -193,6 +193,11 @@ backdrop-filter: blur(20px);
   }
   
 }
+.PieBox{
+  display:flex;
+  flex-direction: row;
+  gap:2em;
+}
 
 .addTransaction{
   margin:0;
