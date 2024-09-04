@@ -25,21 +25,8 @@ export function Res() {
     return (
     <section className="Register">
       <img src={wallpaper} alt="Illustration" className="login-image" />
-      
 
-            LOG IN
             <div className="box">
-                
-       
-                {/* <div className="input">
-                <Input placeholder="User email"/>
-                <Input placeholder="Password"/>
-                <Button width={"100%"}>SUBMIT</Button>
-                </div>
-                
-                <div class="text">There is no need to register,
-                    simply login with proper credentials</div> */}
-     
                 <div className="Googlelogin">
                 <Image marginTop={"5px"} src={logo} h={"30px"} w={"30px"}/>
                 <Button style={{backgroundColor:"transparent"}} onClick={signIn}>SIGN IN</Button>
