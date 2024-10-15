@@ -257,12 +257,16 @@ backdrop-filter: blur(20px);
   height:auto;
   min-height: 100vh;
   margin:0px;
-  gap:10px;
-  background-color: #c1c4c0e1;
+  
+  background-color: linear-gradient(white,blue,white);
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  & .lottie{
+    width: 40rem;
+    height:40rem;
+  }
   & .box{
     display:flex;
     flex-direction: column;

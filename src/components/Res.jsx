@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import wallpaper from "../assets/wallpap.jpeg"
 import logo from "../assets/google.png"
-
+import Lottie from "lottie-react"
+import anime from "./Animation - 1728995772013.json"
 export function Res() {
     const navigate = useNavigate()
     const signIn = async () => {
@@ -24,11 +25,13 @@ export function Res() {
 
     return (
     <section className="Register">
-      <img src={wallpaper} alt="Illustration" className="login-image" />
+    <div className="lottie"
+    ><Lottie animationData={anime} /></div>
+      
 
             <div className="box">
                 <div className="Googlelogin">
-                <Image marginTop={"5px"} src={logo} h={"30px"} w={"30px"}/>
+                <Image src={logo} h={"30px"} w={"30px"}/>
                 <Button style={{backgroundColor:"transparent"}} onClick={signIn}>SIGN IN</Button>
                 </div>
               
