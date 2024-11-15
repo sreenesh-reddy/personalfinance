@@ -1,5 +1,5 @@
-import { Card, CardBody, VStack, Input, Button, Text, Heading, Stack, StackDivider, Box, Flex } from '@chakra-ui/react'
-import { deleteDoc, doc } from 'firebase/firestore';
+import { Card, CardBody, VStack, Input, Button, Text, Heading, Stack,Radio, StackDivider, Box, Flex, RadioGroup, Center } from '@chakra-ui/react'
+import { deleteDoc, doc,updateDoc } from 'firebase/firestore';
 import { useEffect, useState,useRef } from 'react';
 import { db } from './firebase/firebase';
 import { SlCalender } from "react-icons/sl";
@@ -17,7 +17,9 @@ export default function Transactions() {
     const scrollref= useRef(null)
     // const date = tran.createdAt.toDate()
     // const [searchQuery, setSearchQuery] = useState('')
-
+    const [name, setname] = useState('')
+    const [amount, setamount] = useState(0)
+    const [type, settype]=useState(0)
 
     //0 for expense, 1 for income
     const [sumAmount, setsumAmount] = useState(0)
@@ -30,7 +32,8 @@ export default function Transactions() {
     }
 
     const updateTrans = async (id) => {
-
+        setupdateState(-1);
+        console.log('updated')
         const docref = doc(db, "database", id)
         await updateDoc(docref, { name: name, amount: amount, type: type })
 
@@ -194,10 +197,19 @@ export default function Transactions() {
 
 
                                 {updateState === x.id ?
-                                    <Flex direction='column'>
-                                        <Input placeholder='name' onChange={(e) => { setname(e.target.value) }} />
-
-                                        <Input pt={"2"} onChange={(e) => { setamount(e.target.value) }} placeholder="amount" type="number" />
+                                
+                                    <Flex direction='column' mt={'20px'}>
+                                        <h1 style={{fontSize:"30px", marginBottom:"20px"}}>UPDATE</h1>
+                                        <input placeholder='new name' onChange={(e) => { setname(e.target.value) }} />
+                                        <input pt={"2"} onChange={(e) => { setamount(e.target.value) }} placeholder="new amount" type="number" />
+                                        <Flex direction='row' gap={'10px'} alignItems={'Center'}>
+                                        <button onClick={()=>{updateTrans(x.id)}}>SAVE</button>
+                                        <button onClick={()=>{ setupdateState(-1)}}> CLOSE </button>
+                                        <RadioGroup onChange={settype} mt={'10px'} >
+                                            <Radio borderColor={"black"} color={"black"} mr={"10px"} value='0'>Expense </Radio>
+                                            <Radio borderColor={"black"} color={"black"} mr={"10px"} value='1'>Income</Radio>
+                                        </RadioGroup>
+                                        </Flex>
                                     </Flex>
                                     :
                                     null}
