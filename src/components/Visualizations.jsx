@@ -6,22 +6,23 @@ export default function Visualizations() {
     return (<section className="viz">
         <div className="Box">
             <div className="PieBox">
-            <Box  p={4} borderRadius={"30px"} _hover={{ boxShadow: 'xl' }} transition={"0.5s ease-in-out"}>                    
-                <div className="title">
+                <Box p={4} borderRadius={"30px"} _hover={{ boxShadow: 'xl', transform: "translateY(-10px)" }} transition={"0.35s ease-in-out"}>
+                    <div className="title">
                         Breakdown of Cumulative Expenses and Income
                     </div>
                     <PieChart />
-                    </Box>
-                <Box  p={4} borderRadius={"30px"} _hover={{ boxShadow: 'xl' }} transition={"0.5s ease-in-out"}>                    <div className="title">
-                        Breakdown of Expenses:
-                    </div>
+                </Box>
+                <Box p={4} borderRadius={"30px"} _hover={{ boxShadow: 'xl', transform: "translateY(-10px)" }} transition={"0.35s ease-in-out"}>                    
+                    <div className="title">
+                    Breakdown of Expenses:
+                </div>
                     <ExpensePieChart />
-                    </Box>
-                <Box  p={4} borderRadius={"30px"} _hover={{ boxShadow: 'xl' }} transition={"0.5s ease-in-out"}>
+                </Box>
+                <Box p={4} borderRadius={"30px"} _hover={{ boxShadow: 'xl', transform: "translateY(-10px)" }} transition={"0.35s ease-in-out"}>
                     <div className="title">
                         Breakdown of Incomes:
                     </div>
-                <IncomePieChart />
+                    <IncomePieChart />
                 </Box>
             </div>
         </div>
